@@ -50,17 +50,17 @@ class TTSManager:
         # TODO make this for the Pawns
         # OPTIONAL: Use OBS Websockets to enable the Move plugin filter
         if user_number == "1":
-            self.obswebsockets_manager.set_filter_visibility("Line In", "Audio Move - DnD Player 1", True)
+            self.obswebsockets_manager.set_filter_visibility("the Code audio", "mage_pawn_1", True)
         elif user_number == "2":
-            self.obswebsockets_manager.set_filter_visibility("Line In", "Audio Move - DnD Player 2", True)
+            self.obswebsockets_manager.set_filter_visibility("the Code audio", "warior_pawn_2", True)
         elif user_number == "3":
-            self.obswebsockets_manager.set_filter_visibility("Line In", "Audio Move - DnD Player 3", True)
+            self.obswebsockets_manager.set_filter_visibility("the Code audio", "archer_pawn_3", True)
 
         self.audio_manager.play_audio(tts_file, True, True, True)
 
         if user_number == "1":
-            self.obswebsockets_manager.set_filter_visibility("Line In", "Audio Move - DnD Player 1", False)
+            self.obswebsockets_manager.set_filter_visibility("the Code audio", "mage_pawn_1", True)
         elif user_number == "2":
-            self.obswebsockets_manager.set_filter_visibility("Line In", "Audio Move - DnD Player 2", False)
+            self.obswebsockets_manager.set_filter_visibility("the Code audio", "warior_pawn_2", True)
         elif user_number == "3":
-            self.obswebsockets_manager.set_filter_visibility("Line In", "Audio Move - DnD Player 3", False)
+            self.obswebsockets_manager.set_filter_visibility("the Code audio", "archer_pawn_3", True)
