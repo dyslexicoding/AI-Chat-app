@@ -91,28 +91,46 @@ class OBSWebsocketsManager:
 
 
 if __name__ == '__main__':
+    
 
     print("Connecting to OBS Websockets")
     obswebsockets_manager = OBSWebsocketsManager()
+    
+    print("Getting a text source's current text! \n\n")
+    current_text = obswebsockets_manager.get_text("tea making")
+    print(f"Here's its current text: {current_text}\n\n")
+
+    print("Changing a text source's text! \n\n")
+    obswebsockets_manager.set_text("tea making", "Here's my new text!")
+    time.sleep(3)
+    obswebsockets_manager.set_text("tea making", current_text)
+    time.sleep(1)
 
     print("Changing visibility on a source \n\n")
     obswebsockets_manager.set_source_visibility('live', "camera folder", False)
-    time.sleep(5)
+    time.sleep(3)
     obswebsockets_manager.set_source_visibility('live', "camera folder", True)
+    time.sleep(3)
+
+    print("\nEnabling filter on a scene...\n")
+    time.sleep(3)
+    obswebsockets_manager.set_filter_visibility(
+        "live", "camera bottom large mid bounse", True)
+    time.sleep(3)
+    obswebsockets_manager.set_source_visibility('live', "Pawn1", True)
+    obswebsockets_manager.set_filter_visibility(
+        "live", "audio_mage_pawn_1", True)
     time.sleep(5)
+    obswebsockets_manager.set_source_visibility('live', "Pawn1", False)
+    obswebsockets_manager.set_filter_visibility(
+        "live", "audio_mage_pawn_1", False)
+    time.sleep(3)
 
-    # print("\nEnabling filter on a scene...\n")
-    # time.sleep(3)
-    # obswebsockets_manager.set_filter_visibility("/// TTS Characters", "Move Source - Godrick - Up", True)
-    # time.sleep(3)
-    # obswebsockets_manager.set_filter_visibility("/// TTS Characters", "Move Source - Godrick - Down", True)
-    # time.sleep(5)
-
-    # print("Swapping scene!")
-    # obswebsockets_manager.set_scene('*** Camera (Wide)')
-    # time.sleep(3)
-    # print("Swapping back! \n\n")
-    # obswebsockets_manager.set_scene('live')
+    print("Swapping scene!")
+    obswebsockets_manager.set_scene('stream starting')
+    time.sleep(5)
+    print("Swapping back! \n\n")
+    obswebsockets_manager.set_scene('live')
 
     # print("Changing visibility on scroll filter and Audio Move filter \n\n")
     # obswebsockets_manager.set_filter_visibility("Line In", "Audio Move - Chat God", True)
@@ -154,6 +172,6 @@ if __name__ == '__main__':
     # print(f"\nHere is the scene's item list:{response}\n")
     # time.sleep(2)
 
-    time.sleep(300)
+    time.sleep(3)
 
 #############################################

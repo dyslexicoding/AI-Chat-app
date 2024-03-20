@@ -15,7 +15,7 @@ class TTSManager:
     user3_voice_style = "random"
 
     def __init__(self):
-        file_path = self.azuretts_manager.text_to_audio("Chat God App is now running!") # Say some shit when the app starts
+        file_path = self.azuretts_manager.text_to_audio("voice Chat App is now running!") # plays when started
         self.audio_manager.play_audio(file_path, True, True, True)
 
     def update_voice_name(self, user_number, voice_name):
@@ -47,6 +47,7 @@ class TTSManager:
 
         tts_file = self.azuretts_manager.text_to_audio(text, voice_name, voice_style)
 
+        # TODO make this for the Pawns
         # OPTIONAL: Use OBS Websockets to enable the Move plugin filter
         if user_number == "1":
             self.obswebsockets_manager.set_filter_visibility("Line In", "Audio Move - DnD Player 1", True)

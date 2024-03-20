@@ -103,7 +103,7 @@ class Bot(commands.Bot):
 
         # connects to twitch channel
         super().__init__(token=os.getenv('TWITCH_ACCESS_TOKEN'),
-                         prefix='?', initial_channels=['dougdoug'])
+                         prefix='?', initial_channels=[os.getenv('TwichChanel')])
 
     async def event_ready(self):
         print(f'Logged in as | {self.nick}')

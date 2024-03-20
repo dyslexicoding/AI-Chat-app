@@ -53,7 +53,8 @@ class AzureTTSManager:
         pygame.init()
         # Creates an instance of a speech config with specified subscription key and service region.
         # Replace with your own subscription key and service region (e.g., "westus").
-        self.azure_speechconfig = speechsdk.SpeechConfig(subscription=os.getenv('AZURE_TTS_KEY'), region=os.getenv('AZURE_TTS_REGION'))
+        self.azure_speechconfig = speechsdk.SpeechConfig(
+            subscription=os.getenv('AsureTTSKey1'), region=os.getenv('AsureTTSLocation'))
         # Set the voice name, refer to https://aka.ms/speech/voices/neural for full list.
         self.azure_speechconfig.speech_synthesis_voice_name = "en-US-AriaNeural"
         # Creates a speech synthesizer. Setting audio_config to None means it wont play the synthesized text out loud.
