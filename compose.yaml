@@ -1,0 +1,6 @@
+services:
+  server:
+    build:
+      context: .
+    ports:
+      - 6969:6969
