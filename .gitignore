@@ -1,3 +1,7 @@
 
 #varables
 .env
+
+#packages
+obswebsocket
+__pycache__
