@@ -81,6 +81,18 @@ def choose_voice_style(value):
         print("Updating voice style to: " + value['voice_style'])
 
 
+VoiceNames = {
+    '!davis': 'en-US-DavisNeural',
+    '!tony': 'en-US-TonyNeural',
+    '!jason': 'en-US-JasonNeural',
+    '!guy': 'en-US-GuyNeural',
+    '!jane': 'en-US-JaneNeural',
+    '!nancy': "en-US-NancyNeural",
+    '!jenny': 'en-US-JennyNeural',
+    '!aria': 'en-US-AriaNeural'
+}
+
+
 class Bot(commands.Bot):
     current_user_1 = None
     current_user_2 = None
@@ -122,21 +134,30 @@ class Bot(commands.Bot):
                           {'message': f"{message.content}",
                            'current_user': f"{bot.current_user_1}",
                            'user_number': "1"})
-            if bot.tts_enabled_1:
+            if message.content in VoiceNames:
+                bot.update_voice_name('1', VoiceNames[message.content])
+                print("Updating voice style to: " + VoiceNames[message.content] +'for user 1')
+            elif bot.tts_enabled_1:
                 bot.tts_manager.text_to_audio(message.content, "1")
         elif message.author.name == bot.current_user_2:
             socketio.emit('message_send',
                           {'message': f"{message.content}",
                            'current_user': f"{bot.current_user_2}",
                            'user_number': "2"})
-            if bot.tts_enabled_2:
+            if message.content in VoiceNames:
+                bot.update_voice_name('2', VoiceNames[message.content])
+                print("Updating voice style to: " + VoiceNames[message.content] +'for user 2')
+            elif bot.tts_enabled_2:
                 bot.tts_manager.text_to_audio(message.content, "2")
         elif message.author.name == bot.current_user_3:
             socketio.emit('message_send',
                           {'message': f"{message.content}",
                            'current_user': f"{bot.current_user_3}",
                            'user_number': "3"})
-            if bot.tts_enabled_3:
+            if message.content in VoiceNames:
+                bot.update_voice_name('3', VoiceNames[message.content])
+                print("Updating voice style to: " + VoiceNames[message.content] +'for user 3')
+            elif bot.tts_enabled_3:
                 bot.tts_manager.text_to_audio(message.content, "3")
 
         # Add this chatter to the user_pool
