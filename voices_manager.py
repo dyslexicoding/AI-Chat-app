@@ -50,17 +50,17 @@ class TTSManager:
         # TODO make this for the Pawns
         # OPTIONAL: Use OBS Websockets to enable the Move plugin filter
         if user_number == "1":
-            self.obswebsockets_manager.set_filter_visibility("the Code audio", "mage_pawn_1", True)
+            self.obswebsockets_manager.set_filter_visibility("live", "pawn1_in", True)
         elif user_number == "2":
-            self.obswebsockets_manager.set_filter_visibility("the Code audio", "warior_pawn_2", True)
+            self.obswebsockets_manager.set_filter_visibility("live", "pawn2_out", True)
         elif user_number == "3":
-            self.obswebsockets_manager.set_filter_visibility("the Code audio", "archer_pawn_3", True)
+            self.obswebsockets_manager.set_filter_visibility("live", "pawn3_out", True)
 
         self.audio_manager.play_audio(tts_file, True, True, True)
 
         if user_number == "1":
-            self.obswebsockets_manager.set_filter_visibility("the Code audio", "mage_pawn_1", True)
+            self.obswebsockets_manager.set_filter_visibility("live", "pawn1_out", True)
         elif user_number == "2":
-            self.obswebsockets_manager.set_filter_visibility("the Code audio", "warior_pawn_2", True)
+            self.obswebsockets_manager.set_filter_visibility("live", "pawn2_out", True)
         elif user_number == "3":
-            self.obswebsockets_manager.set_filter_visibility("the Code audio", "archer_pawn_3", True)
+            self.obswebsockets_manager.set_filter_visibility("live", "pawn3_out", True)
