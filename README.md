@@ -2,13 +2,13 @@ This is inspired by DougDougs streams and with up upcoming game Dragons Dogma 2 
 
 this will enable three unique users from a Twitch channel to talk on a stream as the persons companions 
 
+
+
 formatting should be in the form of pascal case
 
 Tech:
 > Flask 
-> docker 
-> websites
 > AI voice library - azure.cognitiveservices.speech
 > pygame
 > twitch api
-> 
+ 
